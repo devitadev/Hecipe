@@ -1,0 +1,51 @@
+div p{
+    margin: 14px 0 6px 0;
+    text-align: left;
+}
+
+body{
+    background-image: url("../assets/bg.png");
+    background-size: 124px;
+}
+
+.title{
+    font-size: 36px;
+    font-weight: 200;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 2.5px;
+    width: fit-content;
+    margin-bottom: 18px;
+}
+
+input{
+    width: 304px;
+    padding: 8px 6px;
+}
+
+.box{
+    width: 320px;
+    margin: 46px 0;
+    margin-bottom: 120px;
+    border-style: double;
+    padding: 20px;
+    background-color: white;
+}
+
+button{
+    background-color: brown;
+    color: white;
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    border-radius: 4px;
+    margin: 28px 0 20px 0;
+}
+
+.errMsg{
+    display: none;
+    margin: 4px 0 0 0;
+    color: red;
+}

@@ -1,0 +1,78 @@
+section p{
+    margin:0;
+    font-weight: 100;
+    line-height: 1.5;
+}
+
+.title{
+    font-size: 38px;
+    line-height: 1.5;
+}
+
+.box{
+    background-color: rgba(192, 192, 192, 0.47);
+    padding: 30px;
+    margin:32px 0;
+}
+
+.bottom-border{
+    border-color: rgb(142, 142, 142);
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 2px;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
+button{
+    background-color: brown;
+    color: white;
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 4px;
+    margin-top: 12px;
+}
+
+.title2{
+    font-size: 28px;
+    margin-bottom: 12px;
+    border-color: rgb(79, 79, 79);
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 2.5px;
+    width: fit-content;
+}
+
+.display{
+    display: flex;
+    flex-direction: row;
+}
+
+.purchase-food{
+    max-width: 40%;
+    margin-right: 32px;
+}
+
+.search-food{
+    max-width: 35%;
+    margin-right: 32px;
+}
+
+.site-status{
+    max-width: 15%;
+}
+
+.status{
+    line-height: 1;
+    margin: 8px 0;
+}
+
+@media only screen and (max-width: 1000px){
+    .display{
+        flex-direction: column;
+    }
+    .purchase-food, .search-food, .site-status{
+        max-width: 100%;
+        margin-bottom: 36px;
+    }
+}
