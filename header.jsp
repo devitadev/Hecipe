@@ -31,7 +31,7 @@
                 <div class="navbar-item"><a class="navbar-link" href="">View Transaction</a></div>
             </div>
             <div class="navbar-nav guest-navbar">
-                <div class="navbar-item"><a class="navbar-link" href="">Login</a></div>
+                <div class="navbar-item"><a class="navbar-link" href="login.jsp">Login</a></div>
                 <div class="navbar-item"><a class="navbar-link" href="register.jsp">Register</a></div>
             </div>
         </nav>

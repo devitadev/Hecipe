@@ -5,7 +5,7 @@ CREATE TABLE Msfood (
     food_category VARCHAR(20),
     food_price INT,
     food_quantity INT,
-    food_image MEDIUMBLOB,
+    food_image VARCHAR(255),
     PRIMARY KEY (food_id)
 );
 
