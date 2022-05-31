@@ -76,3 +76,11 @@ button{
         margin-bottom: 36px;
     }
 }
+
+.search input, .search select{
+    padding: 6px;
+}
+
+.search input{
+    width:180px;
+}
