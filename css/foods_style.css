@@ -1,0 +1,93 @@
+.title{
+    font-size: 36px;
+    font-weight: 200;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 2.5px;
+    width: fit-content;
+    margin-bottom: 18px;
+}
+
+button{
+    background-color: brown;
+    color: white;
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 4px;
+}
+
+.search>input, .search>select{
+    padding: 6px;
+}
+
+.search>input{
+    width:200px;
+}
+
+.search{
+    margin: 36px 0 16px 0;
+}
+
+.food-img{
+    width: 260px;
+    height: 160px;
+}
+
+.foods{
+    width: 100%;
+    min-width: 880px;
+    border-collapse: collapse;
+}
+
+.foods a{
+    color: brown;
+}
+
+.first, .next, .prev, .number, .last{
+    text-decoration: none;
+    color: black;
+    margin: 2px;
+    padding: 6px;
+}
+
+.pagination, .pagination td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 26px;
+}
+
+.current-page{
+    background-color: brown;
+}
+
+.current-number{
+    color: white;
+}
+
+.pagination{
+    margin-top: 28px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wrapper{
+    overflow-x:auto;
+}
+
+td{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+thead{
+    background-color: brown;
+    color: white;
+    font-size: 15px;
+}
+
+.foods th, .foods td{
+    border: 1px solid #ddd;
+    padding: 8px;
+}

@@ -56,3 +56,14 @@ CREATE TABLE TransactionDetail (
     FOREIGN KEY (food_id) REFERENCES MsFood(food_id)
 );
 
+INSERT INTO MsUser VALUES 
+('devita@gmail.com', 'Devita', 'devita20', 'admin'),
+('dewipt@gmail.com', 'Dewi', 'dewi15', 'admin'),
+('syntia@gmail.com', 'Syntia', 'syntia3', 'member');
+
+INSERT INTO MsFood VALUES
+('FD001', 'Gado-Gado', 'Gado-gado is an Indonesian salad of steamed vegetables, hard-boiled eggs, boiled potato, fried tofu and tempeh, and lontong, served with a peanut sauce dressing.', 'Vegetarian', 20000, 10, 'assets/menu/gado-gado.jpeg'),
+('FD002', 'Nasi Goreng Seafood', 'Nasi goreng seafood is an Indonesian salad of fried rice with shrimp and squid.', 'Meats', 25000, 10, 'assets/menu/nasi-goreng-seafood.jpeg'),
+('FD003', 'Nasi Goreng', 'Nasi goreng seafood is an Indonesian salad that taste sweet and savoury', 'Vegetarian', 18000, 10, 'assets/menu/nasi-goreng.jpeg'),
+('FD004', 'Nasi Padang', 'Nasi Padang is a Minangkabau steamed rice served with various pre-cooked dishes originating from West Sumatra, Indonesia. It is named after the city Padang, capital of West Sumatra province.', 'Meats', 28000, 5, 'assets/menu/nasi-padang.png'),
+('FD005', 'Rendang', 'Rendang is a beef dish rich in spicy and herbal flavors indigenous to the Minangkabau region of West Sumatra, and one of the most famous representatives of Indonesian cuisine.', 'Meats', 35000, 3, 'assets/menu/rendang.jpeg');

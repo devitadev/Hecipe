@@ -17,7 +17,7 @@
         <nav class="navbar" id="navbar">
             <div class="navbar-nav">
                 <div class="navbar-item"><a class="navbar-link" href="home.jsp">Home</a></div>
-                <div class="navbar-item"><a class="navbar-link" href="">Foods</a></div>
+                <div class="navbar-item"><a class="navbar-link" href="foods.jsp">Foods</a></div>
             </div>
             <div class="navbar-nav admin-navbar">
                 <div class="navbar-item"><p class="welcome-text">Welcome, (name)</p></div>
