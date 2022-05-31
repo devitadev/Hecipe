@@ -105,7 +105,7 @@
                 %>
                 <tr>
                     <td><img class="food-img" src="<%= result.getString("food_image") %>" alt=""></td>
-                    <td><a href=""><%= result.getString("food_name") %></a></td>
+                    <td><a href="food_detail.jsp?id=<%= result.getString("food_id") %>"><%= result.getString("food_name") %></a></td>
                     <td><%= result.getString("food_category") %></td>
                     <td><%= result.getInt("food_price") %></td>
                 </tr>
