@@ -13,7 +13,7 @@
     <center>
         <div class="box">
             <p class="title">Register</p>
-            <form action="insert_user.jsp" method="post" name="formRegister" onsubmit="return(validateRegister())">
+            <form action="controller/insertUserController.jsp" method="post" name="formRegister" onsubmit="return(validateRegister())">
                 <p>Name :</p>
                 <input type="text" name="name" placeholder="Name">
                 <p class="errMsg" id="errName1">name must be filled</p>

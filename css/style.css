@@ -55,10 +55,6 @@ header, header>div, .navbar, .navbar-nav{
     margin: 0;
 }
 
-.member-navbar, .admin-navbar{
-    display: none;
-}
-
 .navbar-toogle{
     display: none;
     align-items: center;

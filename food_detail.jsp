@@ -3,7 +3,7 @@
 <%
     Connect connect = Connect.getConnection();
 
-    String query = "SELECT * FROM MsFood WHERE food_id LIKE '" + request.getParameter("id") + "'";
+    String query = String.format("SELECT * FROM MsFood WHERE food_id LIKE '%s'", request.getParameter("id"));
 
     ResultSet result = connect.executeQuery(query);
     result.next();
@@ -46,7 +46,7 @@
 
         <div class="comments">
             <%
-                query = "SELECT * FROM Comment INNER JOIN MsUser ON Comment.email=MsUser.email WHERE food_id LIKE '" + request.getParameter("id") + "'";
+                query = String.format("SELECT * FROM Comment INNER JOIN MsUser ON Comment.user_id=MsUser.user_id WHERE food_id LIKE '%s'", request.getParameter("id"));
 
                 ResultSet comment = connect.executeQuery(query);
                 while(comment.next()){

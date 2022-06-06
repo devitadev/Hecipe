@@ -1,3 +1,8 @@
+<%@include file="connect.jsp" %>
+<%
+    Connect connect = Connect.getConnection();
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +15,24 @@
 </head>
 <body>
     <header>
+        <%
+            Cookie[] cookies = request.getCookies();
+            String userId = null;
+            String role = null;
+
+            if(cookies != null){
+                for(Cookie cookie : cookies){
+                    if(cookie.getName().equals("userId")) {
+                        userId = cookie.getValue();
+                        session.setAttribute("userId", userId);
+                    }
+                    if(cookie.getName().equals("role")) {
+                        role = cookie.getValue();
+                        session.setAttribute("role", role);
+                    }
+                }
+            }
+        %>
         <div>
             <h1>Hecipe</h1>
             <img class="navbar-toogle" onclick="toogleNavbar()" src="assets/icons8-menu.svg" alt="">
@@ -19,21 +42,47 @@
                 <div class="navbar-item"><a class="navbar-link" href="home.jsp">Home</a></div>
                 <div class="navbar-item"><a class="navbar-link" href="foods.jsp">Foods</a></div>
             </div>
-            <div class="navbar-nav admin-navbar">
-                <div class="navbar-item"><p class="welcome-text">Welcome, (name)</p></div>
-                <div class="navbar-item"><a class="navbar-link" href="">Profile</a></div>
-                <div class="navbar-item"><a class="navbar-link" href="">View Transaction</a></div>
-            </div>
-            <div class="navbar-nav member-navbar">
-                <div class="navbar-item"><p class="welcome-text">Welcome, (name)</p></div>
-                <div class="navbar-item"><a class="navbar-link" href="">Profile</a></div>
-                <div class="navbar-item"><a class="navbar-link" href="">View Chart</a></div>
-                <div class="navbar-item"><a class="navbar-link" href="">View Transaction</a></div>
-            </div>
-            <div class="navbar-nav guest-navbar">
-                <div class="navbar-item"><a class="navbar-link" href="login.jsp">Login</a></div>
-                <div class="navbar-item"><a class="navbar-link" href="register.jsp">Register</a></div>
-            </div>
+            <%
+                if(session.getAttribute("userId") == null){
+                    // kalo guest
+            %>
+                    <div class="navbar-nav">
+                        <div class="navbar-item"><a class="navbar-link" href="login.jsp">Login</a></div>
+                        <div class="navbar-item"><a class="navbar-link" href="register.jsp">Register</a></div>
+                    </div>
+            <%
+                }
+                else{
+                    String query = String.format("SELECT * FROM MsUser WHERE user_id='%s'", session.getAttribute("userId"));
+                    ResultSet result = connect.executeQuery(query);
+                    String name = "";
+
+                    if(result.next()){ name = result.getString("user_name"); }
+
+                    if(session.getAttribute("role").equals("admin")){
+                        // kalo admin
+            %>
+                        <div class="navbar-nav">
+                            <div class="navbar-item"><p class="welcome-text">Welcome, <%= name%></p></div>
+                            <div class="navbar-item"><a class="navbar-link" href="">Profile</a></div>
+                            <div class="navbar-item"><a class="navbar-link" href="">View Transaction</a></div>
+                        </div>
+            <%
+                    }
+                    else if(session.getAttribute("role").equals("member")){
+                        // kalo member
+            %>
+                        <div class="navbar-nav">
+                            <div class="navbar-item"><p class="welcome-text">Welcome, <%= name%></p></div>
+                            <div class="navbar-item"><a class="navbar-link" href="">Profile</a></div>
+                            <div class="navbar-item"><a class="navbar-link" href="">View Chart</a></div>
+                            <div class="navbar-item"><a class="navbar-link" href="">View Transaction</a></div>
+                        </div>
+            <%
+                    }
+                }
+            %>
+            
         </nav>
     </header>
 </body>

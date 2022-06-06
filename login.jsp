@@ -13,7 +13,7 @@
     <center>
         <div class="box">
             <p class="title">Login</p>
-            <form action="" method="post" name="formLogin" onsubmit="">
+            <form action="controller/loginController.jsp" method="post" name="formLogin" onsubmit="">
                 <p>Email :</p>
                 <input type="text" name="email" placeholder="Email">
     
@@ -21,11 +21,11 @@
                 <input type="password" name="password" placeholder="Password">
 
                 <div class="rememberMe">
-                    <input type="checkbox" name="rememberMe">
+                    <input type="checkbox" name="rememberMe" value="remember">
                     Remember Me
                 </div>
                 
-                <p class="errMsg">Incorrect email or password</p>
+                <p class="errMsg" style="display: block;"><% if(request.getParameter("err") != null) out.println(request.getParameter("err"));%></p>
                 <button>Login</button>
             </form>
         </div>

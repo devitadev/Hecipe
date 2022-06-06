@@ -79,7 +79,7 @@
                     </tr>
                 </thead>
                 <%  
-                    String query = "SELECT * FROM MsFood LIMIT " + dataPerPage + " OFFSET " + startData; 
+                    String query = String.format("SELECT * FROM MsFood LIMIT %d OFFSET %d", dataPerPage, startData);
 
                     if(request.getParameter("search") != null){
                         if(request.getParameter("searchBy").equals("name")){
