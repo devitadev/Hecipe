@@ -1,8 +1,6 @@
 <%@include file="connect.jsp" %>
 
 <%
-    Connect connect = Connect.getConnection();
-
     int dataPerPage = 2;
     int totalData = 0;
 
@@ -26,7 +24,7 @@
         }
     }
 
-    ResultSet countDataRes = connect.executeQuery(countDataQuery);
+    ResultSet countDataRes = st.executeQuery(countDataQuery);
     if(countDataRes.next()){
         totalData = countDataRes.getInt(1);
     }
@@ -47,7 +45,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foods</title>
+    <title>Food List</title>
     <link rel="stylesheet" href="css/food_list_style.css">
 </head>
 <body>
@@ -107,7 +105,7 @@
                         }
                     }  
 
-                    ResultSet result = connect.executeQuery(query);
+                    ResultSet result = st.executeQuery(query);
 
                     while(result.next()){
                 %>

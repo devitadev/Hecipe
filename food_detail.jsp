@@ -1,11 +1,9 @@
 <%@include file="connect.jsp" %>
 
 <%
-    Connect connect = Connect.getConnection();
-
     String query = String.format("SELECT * FROM MsFood WHERE food_id LIKE '%s'", request.getParameter("id"));
 
-    ResultSet result = connect.executeQuery(query);
+    ResultSet result = st.executeQuery(query);
     result.next();
 %>
 
@@ -48,7 +46,7 @@
             <%
                 query = String.format("SELECT * FROM Comment INNER JOIN MsUser ON Comment.user_id=MsUser.user_id WHERE food_id LIKE '%s'", request.getParameter("id"));
 
-                ResultSet comment = connect.executeQuery(query);
+                ResultSet comment = st.executeQuery(query);
                 while(comment.next()){
             %>
                 <p class="bold"><%= comment.getString("user_name") %></p>

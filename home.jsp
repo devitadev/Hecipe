@@ -1,10 +1,5 @@
 <%@include file="connect.jsp" %>
 <%@ page import = "java.text.*" %>
-
-<%
-    Connect connect = Connect.getConnection();
-%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,7 +55,7 @@
                 // buat cari tau number of user
                 int numberOfUser = 0;
                 String countDataQuery = "SELECT COUNT(*) FROM MsUser";
-                ResultSet countDataRes = connect.executeQuery(countDataQuery);
+                ResultSet countDataRes = st.executeQuery(countDataQuery);
                 if(countDataRes.next()){
                     numberOfUser = countDataRes.getInt(1);
                 }

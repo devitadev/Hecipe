@@ -5,10 +5,9 @@
     String password = request.getParameter("password");
     String rememberMe = request.getParameter("rememberMe");
 
-    Connect connect = Connect.getConnection();
     String query = String.format("SELECT * FROM MsUser WHERE email='%s' AND user_password='%s'", email, password);
 
-    ResultSet result = connect.executeQuery(query);
+    ResultSet result = st.executeQuery(query);
 
     if(result.next()) {
         // kalo email dan password sesuai

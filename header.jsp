@@ -1,8 +1,4 @@
 <%@include file="connect.jsp" %>
-<%
-    Connect connect = Connect.getConnection();
-%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +50,7 @@
                 }
                 else{
                     String query = String.format("SELECT * FROM MsUser WHERE user_id='%s'", session.getAttribute("userId"));
-                    ResultSet result = connect.executeQuery(query);
+                    ResultSet result = st.executeQuery(query);
                     String name = "";
 
                     if(result.next()){ name = result.getString("user_name"); }
