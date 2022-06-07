@@ -25,7 +25,6 @@
                 <p class="errMsg" id="errEmail2">email should contain '@' and '.'</p>
                 <p class="errMsg" id="errEmail3">email contain only one '@'</p>
                 <p class="errMsg" id="errEmail4">'@' and '.' should not be side by side</p>
-                <p class="errMsg" id="errEmail5">this email have been used before</p>
     
                 <p>Password :</p>
                 <input type="password" name="password" placeholder="Password">
