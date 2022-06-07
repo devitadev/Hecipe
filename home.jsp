@@ -1,3 +1,10 @@
+<%@include file="connect.jsp" %>
+<%@ page import = "java.text.*" %>
+
+<%
+    Connect connect = Connect.getConnection();
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,10 +52,26 @@
                 </form>
             </div>
 
+            <%  
+                // buat cari tau current date
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                String date = sdf.format(new java.util.Date());
+                
+                // buat cari tau number of user
+                int numberOfUser = 0;
+                String countDataQuery = "SELECT COUNT(*) FROM MsUser";
+                ResultSet countDataRes = connect.executeQuery(countDataQuery);
+                if(countDataRes.next()){
+                    numberOfUser = countDataRes.getInt(1);
+                }
+
+                // buat cari tau logged user tp gatau gimana :)
+            %>
+
             <div class="site-status">
                 <p class="title2">Site Status</p>
-                <p class="status">Current date</p>
-                <p class="status">Number of user</p>
+                <p class="status">Current date : <%=  date %></p>
+                <p class="status">Number of user : <%= numberOfUser %></p>
                 <p class="status">Logged user</p>
             </div>
         </div>
