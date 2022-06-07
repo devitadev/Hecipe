@@ -5,7 +5,7 @@ function validateLogin(){
     let validate = true;
 
     // validasi email
-    err = document.getElementById('errEmail1');
+    let err = document.getElementById('errEmail1');
     if(email == null || email == ""){
         err.style.display = 'block';
         validate = false;
