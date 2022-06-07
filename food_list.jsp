@@ -58,7 +58,7 @@
             <p class="title">Foods</p>
         </center>
 
-        <form class="search" action="foods.jsp" type="get">
+        <form class="search" action="food_list.jsp" type="get">
             <input type="text" name="search">
             <select name="searchBy">
                 <option value="name">Name</option>
@@ -125,8 +125,8 @@
                 }
             %>
             <tr>
-                <td><a class="first" href="foods.jsp?page=1<%= pagination %>">First</a></td>
-                <td><a class="prev" href="foods.jsp?page=<%= (currentPage == 1) ? 1 : currentPage-1%><%= pagination %>">Prev</a></td>
+                <td><a class="first" href="food_list.jsp?page=1<%= pagination %>">First</a></td>
+                <td><a class="prev" href="food_list.jsp?page=<%= (currentPage == 1) ? 1 : currentPage-1%><%= pagination %>">Prev</a></td>
                 <%
                     int from = (currentPage <= 2) ? 1 : currentPage - 2;
                     int until = (currentPage > totalPages - 2) ? totalPages : currentPage + 2;
@@ -134,18 +134,18 @@
                     for(int i = from; i<= until; i++) {
                         if(i == currentPage){
                 %>
-                            <td class="current-page"><a class="number current-number" href="foods.jsp?page=<%= i %><%= pagination %>"> <%= i %> </a></td>
+                            <td class="current-page"><a class="number current-number" href="food_list.jsp?page=<%= i %><%= pagination %>"> <%= i %> </a></td>
                 <%
                         }
                         else{
                 %>
-                            <td><a class="number" href="foods.jsp?page=<%= i %><%= pagination %>"> <%= i %> </a></td>
+                            <td><a class="number" href="food_list.jsp?page=<%= i %><%= pagination %>"> <%= i %> </a></td>
                 <%
                         }
                     }
                 %>
-                <td><a class="next" href="foods.jsp?page=<%= (currentPage == totalPages ? totalPages : currentPage+1) %><%= pagination %>">Next</a></td>
-                <td><a class="prev" href="foods.jsp?page=<%= totalPages %><%= pagination %>">Last</a></td>
+                <td><a class="next" href="food_list.jsp?page=<%= (currentPage == totalPages ? totalPages : currentPage+1) %><%= pagination %>">Next</a></td>
+                <td><a class="prev" href="food_list.jsp?page=<%= totalPages %><%= pagination %>">Last</a></td>
             </tr>
         </table>
 

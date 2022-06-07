@@ -40,7 +40,7 @@
         <nav class="navbar" id="navbar">
             <div class="navbar-nav">
                 <div class="navbar-item"><a class="navbar-link" href="home.jsp">Home</a></div>
-                <div class="navbar-item"><a class="navbar-link" href="foods.jsp">Foods</a></div>
+                <div class="navbar-item"><a class="navbar-link" href="food_list.jsp">Foods</a></div>
             </div>
             <%
                 if(session.getAttribute("userId") == null){

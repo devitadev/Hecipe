@@ -21,10 +21,9 @@
             Cookie rememberId = new Cookie("userId", userId);
             Cookie rememberRole = new Cookie("role", role);
 
-            // set age dari cookie
-            // 24 JAM INI PERLU DIUBAH :)
-            rememberId.setMaxAge(10 * 60);
-            rememberRole.setMaxAge(10 * 60);
+            // set age dari cookie -> 24 jam
+            rememberId.setMaxAge(24 * 60 * 60);
+            rememberRole.setMaxAge(24 * 60 * 60);
 
             rememberId.setPath( "/Hecipe");
             rememberRole.setPath( "/Hecipe" );

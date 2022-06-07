@@ -34,7 +34,7 @@
             <div class="search-food">
                 <p class="title2">Search Foods</p>
                 <p>Want to search a specific food in mind? Try using our search engine to find the cuisine that can fill your belly with our greatest cuisine from all around the world.</p>
-                <form class="search" action="foods.jsp" type="get">
+                <form class="search" action="food_list.jsp" type="get">
                     <input type="text" name="search">
                     <select name="searchBy">
                         <option value="name">Name</option>
