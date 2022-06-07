@@ -3,6 +3,7 @@
 <%
     String userId = session.getAttribute("userId").toString();
     String foodId = request.getParameter("id");
+    String from = request.getParameter("from");
 
     String query = String.format("SELECT * FROM Cart WHERE food_id='%s' AND user_id='%s'", foodId, userId);
     out.println(query);
@@ -13,10 +14,14 @@
         st.executeUpdate(query);
     }
 
-    String temp = String.format("?page=%s", request.getParameter("page"));
-    if(request.getParameter("search") != null){
-        temp = temp + String.format("&search=%s&searchBy=%s", request.getParameter("search"), request.getParameter("searchBy"));
+    if(from.equals("food_list")){
+        String temp = String.format("?page=%s", request.getParameter("page"));
+        if(request.getParameter("search") != null){
+            temp = temp + String.format("&search=%s&searchBy=%s", request.getParameter("search"), request.getParameter("searchBy"));
+        }
+        response.sendRedirect("../food_list.jsp" + temp);
     }
-    
-    response.sendRedirect("../food_list.jsp" + temp);
+    else if(from.equals("food_detail")){
+        response.sendRedirect("../food_detail.jsp?id=" + foodId);
+    }
 %>

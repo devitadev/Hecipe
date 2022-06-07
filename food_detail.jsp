@@ -26,7 +26,7 @@
 
         <div class="box">
             <img src="<%= result.getString("food_image") %>" alt="">
-            <div>
+            <div class="detail">
                 <p class="bold">Category</p>
                 <p><%= result.getString("food_category") %></p>
                 <p class="bold">Description</p>
@@ -35,6 +35,19 @@
                 <p><%= result.getInt("food_price") %></p>
                 <p class="bold">Quantity</p>
                 <p><%= result.getInt("food_quantity") %></p>
+                <%
+                    if(session.getAttribute("userId") != null && session.getAttribute("role").equals("member")){
+                        // kalo member
+                %>
+                        <form action="controller/add_to_cart_controller.jsp" type="get">
+                            <input type="hidden" name="from" value="food_detail">
+                            <input type="hidden" name="id" value="<%= result.getString("food_id") %>">
+                            <button>Add to Cart</button>
+                        </form>
+                <%
+                    }
+                %>
+                
             </div>
         </div>
 
@@ -49,12 +62,37 @@
                 ResultSet comment = st.executeQuery(query);
                 while(comment.next()){
             %>
-                <p class="bold"><%= comment.getString("user_name") %></p>
-                <p><%= comment.getString("content") %></p>
+                    <div class="comment">
+                        <div>
+                            <p class="bold"><%= comment.getString("user_name") %></p>
+                            <p><%= comment.getString("content") %></p>
+                        </div>
+                        <%
+                            if(session.getAttribute("userId") != null && comment.getString("user_id").equals(session.getAttribute("userId"))){
+                        %>
+                                <div class="btn-edit-delete">
+                                    <a class="btn-edit" href="">Edit</a>
+                                    <a class="btn-delete" href="">Delete</a>
+                                </div>  
+                        <%
+                            }
+                        %>
+                    </div>
             <%
                 }
             %>
         </div>
+
+        <%
+            if(session.getAttribute("userId") != null && session.getAttribute("role").equals("member")){
+        %>
+                <form class="comment-form" action="controller/add_to_cart_controller.jsp" type="get">
+                    <textarea name="comment" id="" rows="3" placeholder="Write your comment.."></textarea>
+                    <button>Post Comment</button>
+                </form>
+        <%
+            }
+        %>
 
     </section>
 

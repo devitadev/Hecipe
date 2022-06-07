@@ -31,7 +31,7 @@ CREATE TABLE Comment (
     comment_id INT AUTO_INCREMENT,
     user_id INT,
     food_id INT,
-    content VARCHAR(255),
+    content VARCHAR(1000),
     PRIMARY KEY (comment_id),
     FOREIGN KEY (user_id) REFERENCES MsUser(user_id),
     FOREIGN KEY (food_id) REFERENCES MsFood(food_id)
@@ -61,7 +61,8 @@ INSERT INTO MsUser (email, user_name, user_password, user_role) VALUES
 ('devita@gmail.com', 'Devita', 'devita20', 'admin'),
 ('dewipt@gmail.com', 'Dewi', 'dewi15', 'admin'),
 ('syntia@gmail.com', 'Syntia', 'syntia3', 'member'),
-('anthony@gmail.com', 'Anthony', 'gete1234', 'member');
+('anthony@gmail.com', 'Anthony', 'gete1234', 'member'),
+('kevin@gmail.com', 'Kevin', 'kevin20', 'member');
 
 INSERT INTO MsFood (food_name, food_description, food_category, food_price, food_quantity, food_image) VALUES
 ('Gado-Gado', 'Gado-gado is an Indonesian salad of steamed vegetables, hard-boiled eggs, boiled potato, fried tofu and tempeh, and lontong, served with a peanut sauce dressing.', 'Vegetarian', 20000, 10, 'assets/menu/gado-gado.jpeg'),
@@ -72,4 +73,5 @@ INSERT INTO MsFood (food_name, food_description, food_category, food_price, food
 
 INSERT INTO Comment (user_id, food_id, content) VALUES
 (3, 1, 'I really really like this food!!'),
-(4, 1, 'This is the best gado-gado i ever had ! must try !!');
+(4, 1, 'This is the best gado-gado i ever had ! must try !!'),
+(5, 1, 'This is the best gado-gado i ever had ! must try !! This is the best gado-gado i ever had ! must try !! This is the best gado-gado i ever had ! must try !! This is the best gado-gado i ever had ! must try !! This is the best gado-gado i ever had ! must try !! This is the best gado-gado i ever had ! must try !! This is the best gado-gado i ever had ! must try !! This is the best gado-gado i ever had ! must try !!');

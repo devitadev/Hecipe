@@ -124,6 +124,7 @@
                     %>
                             <td>
                                 <form action="controller/add_to_cart_controller.jsp" type="get">
+                                    <input type="hidden" name="from" value="food_list">
                                     <input type="hidden" name="search" value="<%= request.getParameter("search") %>">
                                     <input type="hidden" name="searchBy" value="<%= request.getParameter("searchBy") %>">
                                     <input type="hidden" name="page" value="<%= currentPage %>">

@@ -62,6 +62,7 @@
                             <div class="navbar-item"><p class="welcome-text">Welcome, <%= name%></p></div>
                             <div class="navbar-item"><a class="navbar-link" href="">Profile</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="">View Transaction</a></div>
+                            <div class="navbar-item"><a class="navbar-link" href="">Logout</a></div>
                         </div>
             <%
                     }
@@ -73,6 +74,7 @@
                             <div class="navbar-item"><a class="navbar-link" href="">Profile</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="">View Cart</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="">View Transaction</a></div>
+                            <div class="navbar-item"><a class="navbar-link" href="">Logout</a></div>
                         </div>
             <%
                     }
