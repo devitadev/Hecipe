@@ -117,15 +117,15 @@
                     <td><%= result.getString("food_category") %></td>
                     <td><%= result.getInt("food_price") %></td>
                     <%
-                        if(session.getAttribute("role").equals("admin")){
+                        if(session.getAttribute("userId") != null && session.getAttribute("role").equals("admin")){
                             // kalo rolenya admin
 
                         }
-                        else if(session.getAttribute("role").equals("member")){
+                        else if(session.getAttribute("userId") != null && session.getAttribute("role").equals("member")){
                             // kalo rolenya member
                     %>
                             <td>
-                                <form action="add" type="get">
+                                <form action="controller/add_to_cart_controller.jsp" type="get">
                                     <button>Add to Cart</button>
                                 </form>
                             </td>
