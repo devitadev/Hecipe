@@ -13,7 +13,7 @@
     <center>
         <div class="box">
             <p class="title">Login</p>
-            <form action="controller/loginController.jsp" method="post" name="formLogin" onsubmit="return(validateLogin())">
+            <form action="controller/login_controller.jsp" method="post" name="formLogin" onsubmit="return(validateLogin())">
                 <p>Email :</p>
                 <input type="text" name="email" placeholder="Email">
                 <p class="errMsg" id="errEmail1">email must be filled</p>

@@ -76,6 +76,14 @@
                         <th>Name</th>
                         <th>Category</th>
                         <th>Price</th>
+                        <%
+                            if(session.getAttribute("userId") != null){
+                                // kalo bukan guest
+                        %>
+                            <th>Action</th>
+                        <%
+                            }
+                        %>
                     </tr>
                 </thead>
                 <%  
@@ -108,6 +116,22 @@
                     <td><a href="food_detail.jsp?id=<%= result.getString("food_id") %>"><%= result.getString("food_name") %></a></td>
                     <td><%= result.getString("food_category") %></td>
                     <td><%= result.getInt("food_price") %></td>
+                    <%
+                        if(session.getAttribute("role").equals("admin")){
+                            // kalo rolenya admin
+
+                        }
+                        else if(session.getAttribute("role").equals("member")){
+                            // kalo rolenya member
+                    %>
+                            <td>
+                                <form action="add" type="get">
+                                    <button>Add to Cart</button>
+                                </form>
+                            </td>
+                    <%
+                        }
+                    %>
                 </tr>
                 <%
                     }
