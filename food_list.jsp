@@ -137,8 +137,8 @@
                             // kalo rolenya admin
                     %>
                     <td>
-                        <a class="edit" href="edit_food.jsp?food_id= <%= result.getString("food_id") %>">Edit</a>
-                        <a class="delete" href="controller/delete_food_controller.jsp?food_id= <%= result.getString("food_id") %>">Delete</a>
+                        <a class="edit" href="edit_food.jsp?food_id=<%= result.getString("food_id") %>">Edit</a>
+                        <a class="delete" href="controller/delete_food_controller.jsp?food_id=<%= result.getString("food_id") %>">Delete</a>
                     </td>
                    
                     <%       
