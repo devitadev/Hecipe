@@ -59,7 +59,7 @@
                         // kalo admin
             %>
                         <div class="navbar-nav">
-                            <div class="navbar-item"><p class="welcome-text">Welcome, <%= name%></p></div>
+                            <div class="navbar-item"><p class="welcome-text">Welcome, Admin</p></div>
                             <div class="navbar-item"><a class="navbar-link" href="">Profile</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="">View Transaction</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="">Logout</a></div>
