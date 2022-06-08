@@ -86,8 +86,11 @@
         <%
             if(session.getAttribute("userId") != null && session.getAttribute("role").equals("member")){
         %>
-                <form class="comment-form" action="controller/add_to_cart_controller.jsp" type="get">
+                <form class="comment-form" name="formPostComment" action="" type="get" onsubmit="return(false)">
+                    <input type="hidden" name="foodId" value="<%= request.getParameter("id") %>">
                     <textarea name="comment" id="" rows="3" placeholder="Write your comment.."></textarea>
+                    <p class="errMsg" id="err1">content must be filled</p>
+                    <p class="errMsg" id="err2">content must be at least 5 words</p>
                     <button>Post Comment</button>
                 </form>
         <%
@@ -95,6 +98,8 @@
         %>
 
     </section>
+
+    <script src="js/validate_food_detail.js"></script>
 
     <jsp:include page="footer.jsp"/> 
 </body>

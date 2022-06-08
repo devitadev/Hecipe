@@ -12,10 +12,16 @@ header>div>h1{
     margin: auto;
 }
 
+header{
+    position: fixed;
+    top: 0;
+    width: calc(100% - 20vw);
+}
+
 footer{
     position: fixed;
     bottom: 0;
-    width: 100vw;
+    width: calc(100vw - 8px);
     text-align: center;
     padding: 4px;
 }
@@ -25,7 +31,8 @@ header, section{
 }
 
 section{
-    margin-bottom: 100px;
+    margin-top: 110px;
+    margin-bottom: 120px;
 }
 
 header, header>div, .navbar, .navbar-nav{
