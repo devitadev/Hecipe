@@ -1,0 +1,45 @@
+.title{
+    font-size: 36px;
+    font-weight: 200;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 2.5px;
+    width: fit-content;
+    margin-bottom: 18px;
+}
+
+.add_form{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 10px;
+    width: fit-content;
+}
+
+button{
+    background-color: darkcyan;
+    color: white;
+    padding: 8px 16px;
+    border: 0;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.name, .price, .qty, .img{
+    width: 235px;
+}
+
+input, select{
+    margin: 6px 0;
+    padding: 4px;
+}
+
+.errMsg{
+    display: none;
+    margin: 4px 0 0 0;
+    color: red;
+}
