@@ -55,17 +55,35 @@
         <center>
             <p class="title">Foods</p>
         </center>
+        <table>
+            <tr>
+                <td>
+                    <form class="search" action="food_list.jsp" type="get">
+                        <input type="text" name="search">
+                        <select name="searchBy">
+                            <option value="name">Name</option>
+                            <option value="category">Category</option>
+                            <option value="description">Description</option>
+                        </select>
+                        <button>Search</button>
+                    </form>
 
-        <form class="search" action="food_list.jsp" type="get">
-            <input type="text" name="search">
-            <select name="searchBy">
-                <option value="name">Name</option>
-                <option value="category">Category</option>
-                <option value="description">Description</option>
-            </select>
-            <button>Search</button>
-        </form>
-        
+                </td>
+
+                <%
+                    if(session.getAttribute("userId") != null && session.getAttribute("role").equals("admin")){
+                    // kalo rolenya admin
+                %>
+                <td>
+                    <a class="add" href="add_food.jsp">Add new food</a>
+                </td>
+
+                <%
+                    }
+                %>
+            </tr>
+        </table>
+
         <div class="wrapper">
             <table class="foods">
                 <thead>
@@ -111,13 +129,19 @@
                 %>
                 <tr>
                     <td><img class="food-img" src="<%= result.getString("food_image") %>" alt=""></td>
-                    <td><a href="food_detail.jsp?id=<%= result.getString("food_id") %>"><%= result.getString("food_name") %></a></td>
+                    <td><a class="food_name" href="food_detail.jsp?id=<%= result.getString("food_id") %>"><%= result.getString("food_name") %></a></td>
                     <td><%= result.getString("food_category") %></td>
                     <td><%= result.getInt("food_price") %></td>
                     <%
                         if(session.getAttribute("userId") != null && session.getAttribute("role").equals("admin")){
                             // kalo rolenya admin
-
+                    %>
+                    <td>
+                        <a class="edit" href="edit_food.jsp?food_id= <%= result.getString("food_id") %>">Edit</a>
+                        <a class="delete" href="controller/delete_food_controller.jsp?food_id= <%= result.getString("food_id") %>">Delete</a>
+                    </td>
+                   
+                    <%       
                         }
                         else if(session.getAttribute("userId") != null && session.getAttribute("role").equals("member")){
                             // kalo rolenya member

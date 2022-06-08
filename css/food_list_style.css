@@ -26,9 +26,9 @@ button{
     width:200px;
 }
 
-.search{
+/* .search{
     margin: 36px 0 16px 0;
-}
+} */
 
 .food-img{
     width: 260px;
@@ -41,7 +41,7 @@ button{
     border-collapse: collapse;
 }
 
-.foods a{
+.food_name{
     color: brown;
 }
 
@@ -90,4 +90,37 @@ thead{
 .foods th, .foods td{
     border: 1px solid #ddd;
     padding: 8px;
+}
+
+.edit{
+    text-decoration: none;
+    background-color: orange;
+    border-radius: 4px;
+    color: white;
+    margin: 2px;
+    padding: 6px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.delete{
+    text-decoration: none;
+    background-color: brown;
+    border-radius: 4px;
+    color: white;
+    margin: 2px;
+    padding: 6px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+.add{
+    text-decoration: none;
+    background-color: darkcyan;
+    border-radius: 4px;
+    color: white;
+    padding: 6px;
+    padding-left: 14px;
+    padding-right: 14px;
+    margin-left: 470px;
 }
