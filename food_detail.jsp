@@ -72,7 +72,7 @@
                         %>
                                 <div class="btn-edit-delete">
                                     <a class="btn-edit" href="">Edit</a>
-                                    <a class="btn-delete" href="">Delete</a>
+                                    <a class="btn-delete" href="controller/delete_comment_controller.jsp?id=<%= comment.getString("comment_id")%>&back=<%= request.getParameter("id") %>">Delete</a>
                                 </div>  
                         <%
                             }
@@ -86,7 +86,7 @@
         <%
             if(session.getAttribute("userId") != null && session.getAttribute("role").equals("member")){
         %>
-                <form class="comment-form" name="formPostComment" action="" type="get" onsubmit="return(false)">
+                <form class="comment-form" action="controller/post_comment_controller.jsp" method="post" name="formPostComment" onsubmit="return(validatePostComment())">
                     <input type="hidden" name="foodId" value="<%= request.getParameter("id") %>">
                     <textarea name="comment" id="" rows="3" placeholder="Write your comment.."></textarea>
                     <p class="errMsg" id="err1">content must be filled</p>
@@ -99,7 +99,7 @@
 
     </section>
 
-    <script src="js/validate_food_detail.js"></script>
+    <script src="js/validate_post_comment.js"></script>
 
     <jsp:include page="footer.jsp"/> 
 </body>

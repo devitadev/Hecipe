@@ -6,8 +6,7 @@
     String comment = request.getParameter("comment");
 
     String query = String.format("INSERT INTO Comment (user_id, food_id, content) VALUES (%s, %s, '%s')", userId, foodId, comment);
-    out.println(query);
-    // st.executeUpdate(query);
+    st.executeUpdate(query);
 
-    // response.sendRedirect("../food_list.jsp?id=" + foodId);
+    response.sendRedirect("../food_detail.jsp?id=" + foodId);
 %>

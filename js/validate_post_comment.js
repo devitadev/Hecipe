@@ -9,7 +9,13 @@ function validatePostComment(){
     } else err.style.display = 'none';
 
     err = document.getElementById('err2');
-    if(comment.value.split(' ').length < 5){
+    // ilangin space didepan dan belakang
+    comment = comment.replace(/(^\s*)|(\s*$)/gi,"");
+    // pastiin gk ad space double
+    comment = comment.replace(/[ ]{2,}/gi," ");
+    comment = comment.replace(/\n /,"\n");
+    let numberOfWords = comment.split(' ').length;
+    if(numberOfWords < 5){
         err.style.display = 'block';
         validate = false;
     } else err.style.display = 'none';
