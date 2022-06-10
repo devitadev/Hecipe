@@ -76,6 +76,11 @@
                                 </div>  
                         <%
                             }
+                            else if(session.getAttribute("role") !=null && session.getAttribute("role").equals("admin")){
+                        %>
+                                <a class="btn-delete" href="controller/delete_comment_controller.jsp?id=<%= comment.getString("comment_id")%>&back=<%= request.getParameter("id") %>">Delete</a>
+                        <%
+                            }
                         %>
                     </div>
             <%
