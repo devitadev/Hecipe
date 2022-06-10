@@ -55,34 +55,26 @@
         <center>
             <p class="title">Foods</p>
         </center>
-        <table>
-            <tr>
-                <td>
-                    <form class="search" action="food_list.jsp" type="get">
-                        <input type="text" name="search">
-                        <select name="searchBy">
-                            <option value="name">Name</option>
-                            <option value="category">Category</option>
-                            <option value="description">Description</option>
-                        </select>
-                        <button>Search</button>
-                    </form>
 
-                </td>
-
-                <%
-                    if(session.getAttribute("userId") != null && session.getAttribute("role").equals("admin")){
+        <div class="display">
+            <form class="search" action="food_list.jsp" type="get">
+                <input type="text" name="search">
+                <select name="searchBy">
+                    <option value="name">Name</option>
+                    <option value="category">Category</option>
+                    <option value="description">Description</option>
+                </select>
+                <button>Search</button>
+            </form>
+            <%
+                if(session.getAttribute("userId") != null && session.getAttribute("role").equals("admin")){
                     // kalo rolenya admin
-                %>
-                <td>
+            %>
                     <a class="add" href="add_food.jsp">Add new food</a>
-                </td>
-
-                <%
-                    }
-                %>
-            </tr>
-        </table>
+            <%
+                }
+            %>
+        </div>
 
         <div class="wrapper">
             <table class="foods">

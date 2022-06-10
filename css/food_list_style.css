@@ -26,9 +26,12 @@ button{
     width:200px;
 }
 
-/* .search{
-    margin: 36px 0 16px 0;
-} */
+.display{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 28px 0 14px 0;
+}
 
 .food-img{
     width: 260px;
@@ -119,8 +122,5 @@ thead{
     background-color: darkcyan;
     border-radius: 4px;
     color: white;
-    padding: 6px;
-    padding-left: 14px;
-    padding-right: 14px;
-    margin-left: 470px;
+    padding: 6px 14px;
 }
