@@ -72,7 +72,7 @@
                         <div class="navbar-nav">
                             <div class="navbar-item"><p class="welcome-text">Welcome, <%= name%></p></div>
                             <div class="navbar-item"><a class="navbar-link" href="profile.jsp">Profile</a></div>
-                            <div class="navbar-item"><a class="navbar-link" href="view_chart.jsp">View Cart</a></div>
+                            <div class="navbar-item"><a class="navbar-link" href="view_cart.jsp">View Cart</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="">View Transaction</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="">Logout</a></div>
                         </div>

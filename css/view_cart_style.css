@@ -81,7 +81,7 @@ thead{
     justify-content: end;
 }
 
-.btn-checkout, .btn-emptychart{
+.btn-checkout, .btn-emptycart{
     text-decoration: none;
     padding: 6px 12px;
     margin-left: 6px;
@@ -92,4 +92,11 @@ thead{
 
 .btn-checkout{
     background-color: rgb(17, 144, 17);
+}
+
+.errMsg{
+    color: brown;
+    margin: 0;
+    margin-top: 2px;
+    display: none
 }

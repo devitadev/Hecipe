@@ -49,9 +49,7 @@ CREATE TABLE Cart(
 CREATE TABLE TransactionDetail (
     transaction_id INT,
     food_id INT,
-    food_name VARCHAR(255),
     food_quantity INT,
-    food_price INT,
     PRIMARY KEY (transaction_id, food_id),
     FOREIGN KEY (transaction_id) REFERENCES TrTransaction(transaction_id),
     FOREIGN KEY (food_id) REFERENCES MsFood(food_id)
