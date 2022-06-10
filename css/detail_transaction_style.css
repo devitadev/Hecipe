@@ -45,28 +45,6 @@ thead{
     color: brown;
 }
 
-.input-qty, .btn-save{
-    width: 52px;
-    padding: 3px;
-}
-
-.btn-save{
-    background-color: rgb(254, 152, 0);
-    color: white;
-    border: 0;
-    padding: 6px;
-    border-radius: 4px;
-}
-
-.btn-delete{
-    text-decoration: none;
-    background-color: brown;
-    color: white;
-    font-size: 15px;
-    padding: 5px 8px;
-    border-radius: 4px;
-}
-
 .total{
     text-align: end;
     margin-right: 4px;
@@ -74,29 +52,4 @@ thead{
 
 .total>span{
     font-weight: 600;
-}
-
-.section-ec-co{
-    display: flex;
-    justify-content: end;
-}
-
-.btn-checkout, .btn-emptycart{
-    text-decoration: none;
-    padding: 6px 12px;
-    margin-left: 6px;
-    border-radius: 4px;
-    background-color: brown;
-    color: white;
-}
-
-.btn-checkout{
-    background-color: rgb(17, 144, 17);
-}
-
-.errMsg{
-    color: brown;
-    margin: 0;
-    margin-top: 2px;
-    display: none
 }

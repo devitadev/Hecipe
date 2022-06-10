@@ -29,7 +29,7 @@
                     <tr>
                         <th>Image</th>
                         <th>Name</th>
-                        <th>Quality</th>
+                        <th>Quantity</th>
                         <th>Price</th>
                         <th>Subtotal</th>
                         <th>Action</th>
