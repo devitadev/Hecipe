@@ -19,7 +19,6 @@
             <div class="content">
                 <%
                     String id = session.getAttribute("userId").toString();
-                    String role = session.getAttribute("role").toString();
 
                     String query = String.format("SELECT * FROM MsUser WHERE user_id='%s'", id);
                     ResultSet rs = st.executeQuery(query);
@@ -29,30 +28,23 @@
                 <table>
                     <tr>
                         <td class="bold">Name</td>
-                        <td>
-                            <%= rs.getString("user_name") %>  
-                        </td>
+                        <td><%= rs.getString("user_name") %></td>
                     </tr>
                 
                     <tr>
                         <td class="bold">Email</td>
-                        <td>
-                            <%= rs.getString("email") %>
-                        </td>
+                        <td><%= rs.getString("email") %></td>
                     </tr>
         
                     <tr>
                         <td class="bold">Role</td>
-                        <td>
-                            <%= rs.getString("user_role") %>
-                        </td>
+                        <td><%= rs.getString("user_role") %></td>
                     </tr>
                 </table>
-
+                <a class="change_pass" href="change_password.jsp?user_id=<%= rs.getString("user_id") %>">Change Password</a>
                 <%  
                     }
                 %>
-                <a class="change_pass" href="">Change Password</a>
             </div>
         </center>
         
