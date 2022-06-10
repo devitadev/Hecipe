@@ -1,0 +1,95 @@
+.title{
+    font-size: 36px;
+    font-weight: 200;
+    text-align: center;
+    border-color: black;
+    border-style: solid;
+    border-width: 0;
+    border-bottom-width: 2.5px;
+    width: fit-content;
+    margin: 0 auto 18px auto;
+}
+
+.foods{
+    width: 100%;
+    min-width: 880px;
+    border-collapse: collapse;
+}
+
+.wrapper{
+    overflow-x:auto;
+}
+
+td{
+    text-align: center; 
+    vertical-align: middle;
+}
+
+thead{
+    background-color: brown;
+    color: white;
+    font-size: 15px;
+}
+
+.foods th, .foods td{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.food-img{
+    width: 256px;
+    height: 172px;
+}
+
+.food-name{
+    color: brown;
+}
+
+.input-qty, .btn-save{
+    width: 52px;
+    padding: 3px;
+}
+
+.btn-save{
+    background-color: rgb(254, 152, 0);
+    color: white;
+    border: 0;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+.btn-delete{
+    text-decoration: none;
+    background-color: brown;
+    color: white;
+    font-size: 15px;
+    padding: 5px 8px;
+    border-radius: 4px;
+}
+
+.total{
+    text-align: end;
+    margin-right: 4px;
+}
+
+.total>span{
+    font-weight: 600;
+}
+
+.section-ec-co{
+    display: flex;
+    justify-content: end;
+}
+
+.btn-checkout, .btn-emptychart{
+    text-decoration: none;
+    padding: 6px 12px;
+    margin-left: 6px;
+    border-radius: 4px;
+    background-color: brown;
+    color: white;
+}
+
+.btn-checkout{
+    background-color: rgb(17, 144, 17);
+}
