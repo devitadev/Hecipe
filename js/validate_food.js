@@ -28,8 +28,7 @@ function validateFood(){
         err.style.display = 'block';
         validate = false;
     } else err.style.display = 'none';
-
-    //blm
+    
     err = document.getElementById('errDesc2');
     let wordCount = description.split(" ").length;
     if(wordCount < 5){
