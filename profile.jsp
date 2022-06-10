@@ -25,23 +25,21 @@
                     
                     while(rs.next()){
                 %>
-                <table>
-                    <tr>
-                        <td class="bold">Name</td>
-                        <td><%= rs.getString("user_name") %></td>
-                    </tr>
-                
-                    <tr>
-                        <td class="bold">Email</td>
-                        <td><%= rs.getString("email") %></td>
-                    </tr>
-        
-                    <tr>
-                        <td class="bold">Role</td>
-                        <td><%= rs.getString("user_role") %></td>
-                    </tr>
-                </table>
-                <a class="change_pass" href="change_password.jsp?user_id=<%= rs.getString("user_id") %>">Change Password</a>
+                    <table>
+                        <tr>
+                            <td class="bold">Name</td>
+                            <td><%= rs.getString("user_name") %></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Email</td>
+                            <td><%= rs.getString("email") %></td>
+                        </tr>
+                        <tr>
+                            <td class="bold">Role</td>
+                            <td><%= rs.getString("user_role") %></td>
+                        </tr>
+                    </table>
+                    <a class="change_pass" href="change_password.jsp?user_id=<%= rs.getString("user_id") %>">Change Password</a>
                 <%  
                     }
                 %>
