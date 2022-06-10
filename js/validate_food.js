@@ -31,7 +31,8 @@ function validateFood(){
 
     //blm
     err = document.getElementById('errDesc2');
-    if(description.value.split(' ').length > 5){
+    let wordCount = description.split(" ").length;
+    if(wordCount < 5){
         err.style.display = 'block';
         validate = false;
     } else err.style.display = 'none';
