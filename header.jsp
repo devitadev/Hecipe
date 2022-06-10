@@ -62,7 +62,7 @@
                             <div class="navbar-item"><p class="welcome-text">Welcome, Admin</p></div>
                             <div class="navbar-item"><a class="navbar-link" href="profile.jsp">Profile</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="view_transactions.jsp">View Transaction</a></div>
-                            <div class="navbar-item"><a class="navbar-link" href="">Logout</a></div>
+                            <div class="navbar-item"><a class="navbar-link" href="controller/logout_controller.jsp">Logout</a></div>
                         </div>
             <%
                     }
@@ -74,7 +74,7 @@
                             <div class="navbar-item"><a class="navbar-link" href="profile.jsp">Profile</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="view_cart.jsp">View Cart</a></div>
                             <div class="navbar-item"><a class="navbar-link" href="view_transactions.jsp">View Transaction</a></div>
-                            <div class="navbar-item"><a class="navbar-link" href="">Logout</a></div>
+                            <div class="navbar-item"><a class="navbar-link" href="controller/logout_controller.jsp">Logout</a></div>
                         </div>
             <%
                     }
