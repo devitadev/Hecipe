@@ -28,6 +28,21 @@
                     }
                 }
             }
+
+            if (session.isNew()){
+                String numberOfUserQuery = "SELECT * FROM NumberOfUser";
+                ResultSet numberOfUserRes = st.executeQuery(numberOfUserQuery);
+                if(numberOfUserRes.next()){
+                    int numberOfUser = numberOfUserRes.getInt("NumberOfUser") + 1;
+                    String update = String.format("UPDATE NumberOfUser SET NumberOfUser='%s'", numberOfUser);
+                    st.executeUpdate(update);
+                }
+                else{
+                    String insert = "INSERT INTO NumberOfUser VALUES (1)";
+                    st.executeUpdate(insert);
+                }
+            
+            } 
         %>
         <div>
             <h1>Hecipe</h1>
