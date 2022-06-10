@@ -52,7 +52,7 @@
                             </td>
                             <td><p><%= result.getString("food_price") %></p></td>
                             <td><p><%= subtotal %></p></td>
-                            <td><a class="btn-delete" href="">Delete</a></td>
+                            <td><a class="btn-delete" href="controller/delete_cart_controller.jsp?id=<%= result.getString("food_id") %></a>">Delete</a></td>
                         </tr>
                 <%
                     }
