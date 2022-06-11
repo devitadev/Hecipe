@@ -29,8 +29,8 @@
         <div class="display">
             <div class="purchase-food">
                 <p class="title2">Purchase Foods</p>
-                <p>Hecipe is the place where you can go to if you want to find a wide variety of cuisine around the world. And so, now is the time if you want to fill your belly with the greatest cuisine from around the world.</p>
-                <button>See what's we have to offer</button>
+                <p class="purchase-food-desc">Hecipe is the place where you can go to if you want to find a wide variety of cuisine around the world. And so, now is the time if you want to fill your belly with the greatest cuisine from around the world.</p>
+                <a class="button" href="food_list.jsp">See what's we have to offer</a>
             </div>
 
             <div class="search-food">

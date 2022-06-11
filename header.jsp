@@ -41,7 +41,6 @@
                     String insert = "INSERT INTO NumberOfUser VALUES (1)";
                     st.executeUpdate(insert);
                 }
-            
             } 
         %>
         <div>
