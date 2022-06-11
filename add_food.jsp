@@ -16,7 +16,7 @@
         <center>
             <p class="title">Add Food</p>
         </center>
-  
+
         <form class="add_form" action="controller/add_food_controller.jsp" method="post" name="formFoodInput" onsubmit="return(validateFood())">
             <table>
                 <tr>

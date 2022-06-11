@@ -53,3 +53,18 @@ thead{
 .total>span{
     font-weight: 600;
 }
+
+.process{
+    text-decoration: none;
+    background-color: darkcyan;
+    color: white;
+    font-size: 15px;
+    padding: 5px 8px;
+    border-radius: 4px;
+    width: fit-content;
+}
+
+.process-btn{
+    display: flex;
+    justify-content: end;
+}

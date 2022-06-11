@@ -13,14 +13,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Chart</title>
+    <title>Detail Transactions</title>
     <link rel="stylesheet" href="css/detail_transaction_style.css">
 </head>
 <body>
     <jsp:include page="header.jsp"/> 
 
     <section>
-        <p class="title">Cart</p>
+        <p class="title">Detail Transactions</p>
         <div class="wrapper">
             <table class="foods">
                 <thead>
@@ -51,6 +51,23 @@
                 %>
             </table>
             <p class="total"><span>Total : </span><%= total %></p>
+
+            <%
+                String role = session.getAttribute("role").toString();
+                String trProcessQuery = String.format("SELECT * FROM TrTransaction WHERE transaction_id='%s' ", transactionId);
+
+                ResultSet rs = st.executeQuery(trProcessQuery);
+
+                while(rs.next()){
+                    if(rs.getString("transaction_processed").equals("false") && role.equals("admin")){
+            %>
+                <div class="process-btn">
+                    <a class="process" href="controller/process_transaction_controller.jsp?trId=<%= rs.getString("transaction_id") %>">Process</a>
+                </div>
+            <%        
+                    }
+                }
+            %>
 
         </div>
     </section>
