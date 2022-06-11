@@ -19,6 +19,9 @@
 <body>
     <jsp:include page="header.jsp"/> 
 
+    <script src="js/validate_post_comment.js"></script>
+    <script src="js/validate_edit_comment.js"></script>
+
     <section>
         <center>
             <p class="title"><%= result.getString("food_name")%></p>
@@ -62,23 +65,43 @@
                 ResultSet comment = st.executeQuery(query);
                 while(comment.next()){
             %>
-                    <div class="comment">
-                        <div>
-                            <p class="bold"><%= comment.getString("user_name") %></p>
-                            <p><%= comment.getString("content") %></p>
+                    <div> 
+                        <div class="comment">
+                            <div>
+                                <p class="bold"><%= comment.getString("user_name") %></p>
+                                <p><%= comment.getString("content") %></p>
+                            </div>
+                            <%
+                                if(session.getAttribute("userId") != null && comment.getString("user_id").equals(session.getAttribute("userId"))){
+                            %>
+                                    <div class="btn-edit-delete">
+                                        <button class="btn-edit" id="btn-edit" onclick="editComment()">Edit</button>
+                                        <a class="btn-delete" href="controller/delete_comment_controller.jsp?id=<%= comment.getString("comment_id")%>&back=<%= request.getParameter("id") %>">Delete</a>
+                                    </div>  
+                            <%
+                                }
+                                else if(session.getAttribute("role") !=null && session.getAttribute("role").equals("admin")){
+                            %>
+                                    <a class="btn-delete" href="controller/delete_comment_controller.jsp?id=<%= comment.getString("comment_id")%>&back=<%= request.getParameter("id") %>">Delete</a>
+                            <%
+                                }
+                            %>
                         </div>
+
                         <%
                             if(session.getAttribute("userId") != null && comment.getString("user_id").equals(session.getAttribute("userId"))){
+                                // ini belom kelar :)
                         %>
-                                <div class="btn-edit-delete">
-                                    <a class="btn-edit" href="">Edit</a>
-                                    <a class="btn-delete" href="controller/delete_comment_controller.jsp?id=<%= comment.getString("comment_id")%>&back=<%= request.getParameter("id") %>">Delete</a>
-                                </div>  
-                        <%
-                            }
-                            else if(session.getAttribute("role") !=null && session.getAttribute("role").equals("admin")){
-                        %>
-                                <a class="btn-delete" href="controller/delete_comment_controller.jsp?id=<%= comment.getString("comment_id")%>&back=<%= request.getParameter("id") %>">Delete</a>
+                            <div id="edit-comment-form">
+                                <form class="edit-comment-form" action="controller/edit_comment_controller.jsp" method="post" name="formEditComment" onsubmit="return(validateEditComment())">
+                                    <input type="hidden" name="commentId" value="<%= comment.getString("comment_id") %>">
+                                    <input type="hidden" name="foodId" value="<%= request.getParameter("id") %>">
+                                    <textarea name="edited-comment" id="" rows="3"><%= comment.getString("content") %></textarea>
+                                    <p class="errMsg" id="err-edit1">content must be filled</p>
+                                    <p class="errMsg" id="err-edit2">content must be at least 5 words</p>
+                                    <button type="submit" id="btn-save-edit">Save Edit</button>
+                                </form>
+                            </div>
                         <%
                             }
                         %>
@@ -87,7 +110,6 @@
                 }
             %>
         </div>
-
         <%
             if(session.getAttribute("userId") != null && session.getAttribute("role").equals("member")){
         %>
@@ -103,8 +125,6 @@
         %>
 
     </section>
-
-    <script src="js/validate_post_comment.js"></script>
 
     <jsp:include page="footer.jsp"/> 
 </body>
