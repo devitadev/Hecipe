@@ -55,10 +55,6 @@ CREATE TABLE TransactionDetail (
     FOREIGN KEY (food_id) REFERENCES MsFood(food_id)
 );
 
-CREATE TABLE NumberOfUser (
-    NumberOfUser INT
-);
-
 INSERT INTO MsUser (email, user_name, user_password, user_role) VALUES 
 ('devita@gmail.com', 'Devita', 'devita20', 'admin'),
 ('dewipt@gmail.com', 'Dewi', 'dewi15', 'admin'),

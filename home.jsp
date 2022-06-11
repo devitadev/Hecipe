@@ -54,26 +54,20 @@
                 
                 // buat cari tau number of user
                 int numberOfUser = 0;
-                String numberOfUserQuery = "SELECT * FROM NumberOfUser";
-                ResultSet numberOfUserRes = st.executeQuery(numberOfUserQuery);
-                if(numberOfUserRes.next()){
-                    numberOfUser = numberOfUserRes.getInt("NumberOfUser");
-                }
-
-                // buat cari tau logged user tp gatau gimana
-                int numberOfLoggedUser = 0;
                 String countDataQuery = "SELECT COUNT(*) FROM MsUser";
                 ResultSet countDataRes = st.executeQuery(countDataQuery);
                 if(countDataRes.next()){
-                    numberOfLoggedUser = countDataRes.getInt(1);
+                    numberOfUser = countDataRes.getInt(1);
                 }
+
+                // buat cari tau logged user tp gatau gimana
             %>
 
             <div class="site-status">
                 <p class="title2">Site Status</p>
                 <p class="status">Current date : <%=  date %></p>
                 <p class="status">Number of user : <%= numberOfUser %></p>
-                <p class="status">Logged user : <%= numberOfLoggedUser %></p>
+                <p class="status">Logged user : </p>
             </div>
         </div>
     </section>
