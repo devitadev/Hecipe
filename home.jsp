@@ -54,7 +54,7 @@
                 
                 // buat cari tau number of user
                 int numberOfUser = 0;
-                String countDataQuery = "SELECT COUNT(*) FROM MsUser";
+                String countDataQuery = String.format("SELECT COUNT(*) FROM MsUser WHERE user_role='%s' ", "member");
                 ResultSet countDataRes = st.executeQuery(countDataQuery);
                 if(countDataRes.next()){
                     numberOfUser = countDataRes.getInt(1);
