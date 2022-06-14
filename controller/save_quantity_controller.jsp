@@ -5,15 +5,43 @@
     String foodId = request.getParameter("id");
     String quantity = request.getParameter("quantity");
 
-    String query;
-    if(Integer.parseInt(quantity) <= 0){
-        query = String.format("DELETE FROM Cart WHERE user_id='%s' AND food_id='%s'", userId, foodId);
-    } 
-    else{
-        query = String.format("UPDATE Cart SET quantity='%s' WHERE user_id='%s' AND food_id='%s'", quantity, userId, foodId);
+    boolean validate = true;
+    String err = "";
+
+    String query1 = String.format("SELECT * FROM Cart JOIN Msfood ON Cart.food_id=Msfood.food_id WHERE user_id='%s'", userId);
+    
+    ResultSet result = st.executeQuery(query1);
+    
+    if(quantity.isEmpty()){
+        err = err + "errQty=quantity must be filled";
+        validate = false;
     }
 
-    st.executeUpdate(query);
+    while(result.next()){
+        Integer stock = result.getInt("food_quantity");
 
-    response.sendRedirect("../view_cart.jsp");
+        if(Integer.parseInt(quantity) > stock){
+            if(err != "") err = err + "&";
+            err = err + "errQty=remaining stock = " + stock;
+            validate = false;
+        }
+    }
+
+    if(validate){
+        String query;
+        if(Integer.parseInt(quantity) <= 0){
+            query = String.format("DELETE FROM Cart WHERE user_id='%s' AND food_id='%s'", userId, foodId);
+        } 
+        else{
+            query = String.format("UPDATE Cart SET quantity='%s' WHERE user_id='%s' AND food_id='%s'", quantity, userId, foodId);
+        }
+
+        st.executeUpdate(query);
+
+        response.sendRedirect("../view_cart.jsp");
+    }else{
+        response.sendRedirect("../view_cart.jsp?" + err);
+    }
+
+    
 %>

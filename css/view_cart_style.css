@@ -93,10 +93,3 @@ thead{
 .btn-checkout{
     background-color: rgb(17, 144, 17);
 }
-
-.errMsg{
-    color: brown;
-    margin: 0;
-    margin-top: 2px;
-    display: none
-}

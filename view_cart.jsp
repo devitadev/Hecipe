@@ -51,8 +51,8 @@
                                     <input class="input-qty" name="quantity" type="number" value="<%= result.getString("quantity") %>">
                                     <button class="btn-save">Save</button>
                                 </form>
-                                <p class="errMsg" id="err1">quantity must be filled</p>
-                                <p class="errMsg" id="err2">remaining stock = <%= stock %></p>
+                                <p style="color: red; margin: 0;"><% if(request.getParameter("errQty") != null) out.println(request.getParameter("errQty")); %> </p> 
+                                
                             </td>
                             <td><p><%= result.getString("food_price") %></p></td>
                             <td><p><%= subtotal %></p></td>
@@ -73,6 +73,5 @@
     </section>
 
     <script src="js/validate_save_quantity.js"></script>
-    <jsp:include page="footer.jsp"/> 
 </body>
 </html>
