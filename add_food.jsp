@@ -25,7 +25,8 @@
                     </td>
                     <td>
                         <input class="name" type="text" name="food_name" placeholder="Name" >
-                        <p style="color: red; margin: 0;"><% if(request.getParameter("errName") != null) out.println(request.getParameter("errName")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errName1") != null) out.println(request.getParameter("errName1")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errName2") != null) out.println(request.getParameter("errName2")); %> </p> 
                     </td>
                 </tr>
 
@@ -50,7 +51,8 @@
                     </td>
                     <td>
                         <textarea name="food_description" id="" cols="30" rows="10"></textarea>
-                        <p style="color: red; margin: 0;"><% if(request.getParameter("errDesc") != null) out.println(request.getParameter("errDesc")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errDesc1") != null) out.println(request.getParameter("errDesc1")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errDesc2") != null) out.println(request.getParameter("errDesc2")); %> </p>
                     </td>
                 </tr>
 
@@ -70,7 +72,8 @@
                     </td>
                     <td>
                         <input class="price" type="number" name="food_price" id="" placeholder="Price">
-                        <p style="color: red; margin: 0;"><% if(request.getParameter("errPrice") != null) out.println(request.getParameter("errPrice")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errPrice1") != null) out.println(request.getParameter("errPrice1")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errPrice2") != null) out.println(request.getParameter("errPrice2")); %> </p>
                     </td>
                 </tr>
 
@@ -80,7 +83,8 @@
                     </td>
                     <td>
                         <input class="qty" type="number" name="food_qty" id="" placeholder="Quantity">
-                        <p style="color: red; margin: 0;"><% if(request.getParameter("errQty") != null) out.println(request.getParameter("errQty")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errQty1") != null) out.println(request.getParameter("errQty1")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errQty2") != null) out.println(request.getParameter("errQty2")); %> </p> 
                     </td>
                 </tr>
 

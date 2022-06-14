@@ -13,27 +13,27 @@
 
     //validasi name
     if(name.isEmpty()){
-        err = err + "errName=name must be filled";
+        err = err + "errName1=name must be filled";
         validate = false;
     } 
 
     if(name.length() < 3){
         if(err != "") err = err + "&";
-        err = err + "errName=name should be at least 3 characters";
+        err = err + "errName2=name should be at least 3 characters";
         validate = false;
     }
 
     // validasi description
     if(description.isEmpty()){
         if(err != "") err = err + "&";
-        err = err + "errDesc=description must be filled";
+        err = err + "errDesc1=description must be filled";
         validate = false;
     }
     
     int wordCount = description.split(" ").length;
     if(wordCount < 5){
         if(err != "") err = err + "&";
-        err = err + "errDesc=description should be at least 5 words";
+        err = err + "errDesc2=description should be at least 5 words";
         validate = false;
     }
 
@@ -47,26 +47,26 @@
     // validasi price 
     if(price.isEmpty()){
         if(err != "") err = err + "&";
-        err = err + "errPrice=price must be filled";
+        err = err + "errPrice1=price must be filled";
         validate = false;
     } 
 
     if(Integer.parseInt(price) < 0){
         if(err != "") err = err + "&";
-        err = err + "errPrice=price should be more than 0";
+        err = err + "errPrice2=price should be more than 0";
         validate = false;
     } 
     
     // validasi quantity
     if(quantity.isEmpty()){
         if(err != "") err = err + "&";
-        err = err + "errQty=quantity must be filled";
+        err = err + "errQty1=quantity must be filled";
         validate = false;
     }
 
     if(Integer.parseInt(quantity) <= 0){
         if(err != "") err = err + "&";
-        err = err + "errQty=quantity should be more than or equal 0";
+        err = err + "errQty2=quantity should be more than or equal 0";
         validate = false;
     }
 
