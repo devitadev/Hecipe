@@ -1,4 +1,5 @@
 function validateEditComment(){
+    /*
     let comment = document.forms['formEditComment']['edited-comment'].value;
     let validate = true;
 
@@ -20,7 +21,7 @@ function validateEditComment(){
         validate = false;
     } else err.style.display = 'none';
 
-    return validate;
+    return validate;*/
 }
 
 function editComment(){

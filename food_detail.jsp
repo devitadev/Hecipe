@@ -19,7 +19,7 @@
 <body>
     <jsp:include page="header.jsp"/> 
 
-    <script src="js/validate_post_comment.js"></script>
+    
     <script src="js/validate_edit_comment.js"></script>
 
     <section>
@@ -97,6 +97,7 @@
                                     <input type="hidden" name="commentId" value="<%= comment.getString("comment_id") %>">
                                     <input type="hidden" name="foodId" value="<%= request.getParameter("id") %>">
                                     <textarea name="edited-comment" id="" rows="3"><%= comment.getString("content") %></textarea>
+                                    <p style="color: red; margin: 0;"><% if(request.getParameter("err2") != null) out.println(request.getParameter("err")); %> </p>
                                     <p class="errMsg" id="err-edit1">content must be filled</p>
                                     <p class="errMsg" id="err-edit2">content must be at least 5 words</p>
                                     <button type="submit" id="btn-save-edit">Save Edit</button>
@@ -113,11 +114,11 @@
         <%
             if(session.getAttribute("userId") != null && session.getAttribute("role").equals("member")){
         %>
-                <form class="comment-form" action="controller/post_comment_controller.jsp" method="post" name="formPostComment" onsubmit="return(validatePostComment())">
+                <form class="comment-form" action="controller/post_comment_controller.jsp" method="post">
                     <input type="hidden" name="foodId" value="<%= request.getParameter("id") %>">
                     <textarea name="comment" id="" rows="3" placeholder="Write your comment.."></textarea>
-                    <p class="errMsg" id="err1">content must be filled</p>
-                    <p class="errMsg" id="err2">content must be at least 5 words</p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("err1") != null) out.println(request.getParameter("err1")); %> </p>
+
                     <button>Post Comment</button>
                 </form>
         <%

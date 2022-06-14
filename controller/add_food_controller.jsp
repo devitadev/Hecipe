@@ -5,8 +5,8 @@
     String category = request.getParameter("food_category");
     String description = request.getParameter("food_description");
     String image = request.getParameter("food_img");
-    int price = Integer.parseInt(request.getParameter("food_price"));
-    int quantity = Integer.parseInt(request.getParameter("food_qty"));
+    String price = request.getParameter("food_price");
+    String quantity = request.getParameter("food_qty");
 
     boolean validate = true;
     String err = "";
@@ -45,24 +45,26 @@
     } 
 
     // validasi price 
-    if(request.getParameter("food_price").isEmpty()){
+    if(price.isEmpty()){
+        if(err != "") err = err + "&";
         err = err + "errPrice=price must be filled";
         validate = false;
     } 
 
-    if(price< 0){
+    if(Integer.parseInt(price) < 0){
         if(err != "") err = err + "&";
         err = err + "errPrice=price should be more than 0";
         validate = false;
     } 
     
     // validasi quantity
-    if(request.getParameter("food_qty").isEmpty()){
+    if(quantity.isEmpty()){
+        if(err != "") err = err + "&";
         err = err + "errQty=quantity must be filled";
         validate = false;
     }
 
-    if(quantity <= 0){
+    if(Integer.parseInt(quantity) <= 0){
         if(err != "") err = err + "&";
         err = err + "errQty=quantity should be more than or equal 0";
         validate = false;

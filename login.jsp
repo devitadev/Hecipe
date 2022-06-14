@@ -14,17 +14,14 @@
         <center>
             <div class="box">
                 <p class="title">Login</p>
-                <form action="controller/login_controller.jsp" method="post" name="formLogin" onsubmit="return(validateLogin())">
+                <form action="controller/login_controller.jsp" method="post">
                     <p>Email :</p>
                     <input type="text" name="email" placeholder="Email">
-                    <p class="errMsg" id="errEmail1">email must be filled</p>
-                    <p class="errMsg" id="errEmail2">email should contain '@' and '.'</p>
-                    <p class="errMsg" id="errEmail3">email contain only one '@'</p>
-                    <p class="errMsg" id="errEmail4">'@' and '.' should not be side by side</p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail") != null) out.println(request.getParameter("errEmail")); %> </p>
         
                     <p>Password :</p>
                     <input type="password" name="password" placeholder="Password">
-                    <p class="errMsg" id="errPass1">password must be filled</p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errPass") != null) out.println(request.getParameter("errPass")); %> </p>
     
                     <div class="rememberMe">
                         <input type="checkbox" name="rememberMe" value="remember">
@@ -39,7 +36,5 @@
     </section>
 
     <jsp:include page="footer.jsp"/> 
-
-    <script src="js/validate_login.js"></script>
 </body>
 </html>
