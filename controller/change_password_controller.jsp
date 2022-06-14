@@ -11,32 +11,32 @@
 
     // validasi old
     if(oldPassword.isEmpty()){
-        err = err + "errOld=old password must be filled";
+        err = err + "errOld=Old password must be filled";
         validate = false;
     } 
 
     // validasi new
     if(newPassword.isEmpty()){
         if(err != "") err = err + "&";
-        err = err + "errNew=New password must be filled";
+        err = err + "errNew1=New password must be filled";
         validate = false;
     } 
 
     if(newPassword.length() < 6){
         if(err != "") err = err + "&";
-        err = err + "errNew=New password length must be at least 6 characters";
+        err = err + "errNew2=New password length must be at least 6 characters";
         validate = false;
     }
 
     if(!newPassword.matches(".*[^a-z].*")){
         if(err != "") err = err + "&";
-        err = err + "errNew=New password must contain at least 1 number";
+        err = err + "errNew3=New password must contain at least 1 number";
         validate = false;
     } 
 
     if(!newPassword.matches(".*[^0-9].*")){
         if(err != "") err = err + "&";
-        err = err + "errNew=New password must contain at least 1 alphabet";
+        err = err + "errNew4=New password must contain at least 1 alphabet";
         validate = false;
     }
 

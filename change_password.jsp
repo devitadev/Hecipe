@@ -30,7 +30,10 @@
                             <td class="col1">New Password</td>
                             <td>
                                 <input type="password" name="new" placeholder="New password">
-                                <p style="color: red; margin: 0;"><% if(request.getParameter("errNew") != null) out.println(request.getParameter("errNew")); %> </p>
+                                <p style="color: red; margin: 0;"><% if(request.getParameter("errNew1") != null) out.println(request.getParameter("errNew1")); %> </p>
+                                <p style="color: red; margin: 0;"><% if(request.getParameter("errNew2") != null) out.println(request.getParameter("errNew2")); %> </p>
+                                <p style="color: red; margin: 0;"><% if(request.getParameter("errNew3") != null) out.println(request.getParameter("errNew3")); %> </p>
+                                <p style="color: red; margin: 0;"><% if(request.getParameter("errNew4") != null) out.println(request.getParameter("errNew4")); %> </p>
                             </td>
                         </tr>
             
