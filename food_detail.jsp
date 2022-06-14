@@ -18,9 +18,7 @@
 </head>
 <body>
     <jsp:include page="header.jsp"/> 
-
-    
-    <script src="js/validate_edit_comment.js"></script>
+    <script src="js/edit_comment.js"></script>
 
     <section>
         <center>
@@ -75,7 +73,7 @@
                                 if(session.getAttribute("userId") != null && comment.getString("user_id").equals(session.getAttribute("userId"))){
                             %>
                                     <div class="btn-edit-delete">
-                                        <button class="btn-edit" id="btn-edit" onclick="editComment()">Edit</button>
+                                        <button class="btn-edit" id="btn-edit" onclick="editComment(<%= comment.getString("comment_id") %>)">Edit</button>
                                         <a class="btn-delete" href="controller/delete_comment_controller.jsp?id=<%= comment.getString("comment_id")%>&back=<%= request.getParameter("id") %>">Delete</a>
                                     </div>  
                             <%
@@ -90,19 +88,18 @@
 
                         <%
                             if(session.getAttribute("userId") != null && comment.getString("user_id").equals(session.getAttribute("userId"))){
-                                // ini belom kelar :)
                         %>
-                            <div id="edit-comment-form">
-                                <form class="edit-comment-form" action="controller/edit_comment_controller.jsp" method="post" name="formEditComment" onsubmit="return(validateEditComment())">
+                            <div class="edit-comment-form" id="edit-comment-form-<%= comment.getString("comment_id") %>">
+                                <form action="controller/edit_comment_controller.jsp" method="post" name="formEditComment">
                                     <input type="hidden" name="commentId" value="<%= comment.getString("comment_id") %>">
                                     <input type="hidden" name="foodId" value="<%= request.getParameter("id") %>">
                                     <textarea name="edited-comment" id="" rows="3"><%= comment.getString("content") %></textarea>
-                                    <p style="color: red; margin: 0;"><% if(request.getParameter("err2") != null) out.println(request.getParameter("err")); %> </p>
-                                    <p class="errMsg" id="err-edit1">content must be filled</p>
-                                    <p class="errMsg" id="err-edit2">content must be at least 5 words</p>
                                     <button type="submit" id="btn-save-edit">Save Edit</button>
                                 </form>
                             </div>
+                            <p style="color: red; margin-top: 0;"><% if(request.getParameter("erredit1-"+comment.getString("comment_id")) != null) out.println(request.getParameter("erredit1-"+comment.getString("comment_id"))); %> </p>
+                            <p style="color: red; margin-top: 0;"><% if(request.getParameter("erredit2-"+comment.getString("comment_id")) != null) out.println(request.getParameter("erredit2-"+comment.getString("comment_id"))); %> </p>
+                                    
                         <%
                             }
                         %>
@@ -117,8 +114,8 @@
                 <form class="comment-form" action="controller/post_comment_controller.jsp" method="post">
                     <input type="hidden" name="foodId" value="<%= request.getParameter("id") %>">
                     <textarea name="comment" id="" rows="3" placeholder="Write your comment.."></textarea>
-                    <p style="color: red; margin: 0;"><% if(request.getParameter("err1") != null) out.println(request.getParameter("err1")); %> </p>
-
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errpost1") != null) out.println(request.getParameter("errpost1")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errpost2") != null) out.println(request.getParameter("errpost2")); %> </p>
                     <button>Post Comment</button>
                 </form>
         <%

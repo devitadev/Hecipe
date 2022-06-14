@@ -116,7 +116,7 @@ textarea{
     padding: 7px 14px;
 }
 
-#edit-comment-form{
+.edit-comment-form{
     display: none;
 }
 

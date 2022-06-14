@@ -10,24 +10,15 @@
 
     if(comment.isEmpty()){
         if(err != "") err = err + "&";
-        err = err + "err1=content must be filled";
+        err = err + "errpost1=content must be filled";
         validate = false;
     }
 
-    // ini belom 
-    comment = comment.replace("  ", " ");
-    out.println(comment);
-    // ilangin space didepan dan belakang
-    /*comment = comment.replace(/(^\s*)|(\s*$)/gi,"");
-    // pastiin gk ad space double
-    comment = comment.replace(/[ ]{2,}/gi," ");
-    comment = comment.replace(/\n /,"\n");*/
-    comment = comment.replace("  ", " ");
-    //comment = comment.replace(/\n /,"\n");
-    int numberOfWords = comment.split(" ").length;
+    comment = comment.trim();
+    int numberOfWords = comment.split("\\s+").length;
     if(numberOfWords < 5){
         if(err != "") err = err + "&";
-        err = err + "err1=content must be at least 5 words";
+        err = err + "errpost2=content must be at least 5 words";
         validate = false;
     }
 
@@ -37,7 +28,6 @@
 
         response.sendRedirect("../food_detail.jsp?id=" + foodId);
     }else{
-        
         response.sendRedirect("../food_detail.jsp?id=" + foodId + '&' + err);
     }
 

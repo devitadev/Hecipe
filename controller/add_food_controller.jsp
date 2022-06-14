@@ -50,8 +50,7 @@
         err = err + "errPrice1=price must be filled";
         validate = false;
     } 
-
-    if(Integer.parseInt(price) < 0){
+    else if(Integer.parseInt(price) < 0){
         if(err != "") err = err + "&";
         err = err + "errPrice2=price should be more than 0";
         validate = false;
@@ -63,8 +62,7 @@
         err = err + "errQty1=quantity must be filled";
         validate = false;
     }
-
-    if(Integer.parseInt(quantity) <= 0){
+    else if(Integer.parseInt(quantity) <= 0){
         if(err != "") err = err + "&";
         err = err + "errQty2=quantity should be more than or equal 0";
         validate = false;
@@ -73,7 +71,12 @@
     // validasi image
     if(image.isEmpty()){
         if(err != "") err = err + "&";
-        err = err + "errImage=image must be filled";
+        err = err + "errImage1=image must be filled";
+        validate = false;
+    }
+    if(!image.endsWith(".png") && !image.endsWith(".jpg") && !image.endsWith(".jpeg")){
+        if(err != "") err = err + "&";
+        err = err + "errImage2=image extension must be .png, .jpg, or .jpeg";
         validate = false;
     }
 

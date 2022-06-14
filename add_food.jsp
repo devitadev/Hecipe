@@ -62,7 +62,8 @@
                     </td>
                     <td>
                         <input class="img" type="text" name="food_img" id="" placeholder="Image path" >
-                        <p style="color: red; margin: 0;"><% if(request.getParameter("errImage") != null) out.println(request.getParameter("errImage")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errImage1") != null) out.println(request.getParameter("errImage1")); %> </p> 
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errImage2") != null) out.println(request.getParameter("errImage2")); %> </p> 
                     </td>
                 </tr>
 

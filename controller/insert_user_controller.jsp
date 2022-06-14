@@ -12,57 +12,57 @@
 
     // validasi name
     if(name.isEmpty()){
-        err = err + "errName=name must be filled";
+        err = err + "errName1=name must be filled";
         validate = false;
     }
     if(name.length() < 3){
         if(err != "") err = err + "&";
-        err = err + "errName=name should be at least 3 characters";
+        err = err + "errName2=name should be at least 3 characters";
         validate = false;
     }
     
     // validasi email
     if(email.isEmpty()){
         if(err != "") err = err + "&";
-        err = err + "errEmail=email must be filled";
+        err = err + "errEmail1=email must be filled";
         validate = false;
     }
     if(!email.contains("@") || !email.contains(".")){
         if(err != "") err = err + "&";
-        err = err + "errEmail=email should contain '@' and '.'";
+        err = err + "errEmail2=email should contain '@' and '.'";
         validate = false;
     }
-    int position = email.indexOf("@");/* ini belom
-    if(email.includes("@", (position+1))){
-        if(err != "") err = err + "&";
-        err = err + "errEmail=email contain only one '@'";
+    String temp = "a"+email+"a"; // biar cuma @@ pun bs kesplit
+    if(temp.split("@").length > 2){
+         if(err != "") err = err + "&";
+        err = err + "errEmail3=email contain only one '@'";
         validate = false;
     }
-    if(email.charAt(position+1) == '.' || email.charAt(position-1) == '.'){
+    if(email.contains("..")){
         if(err != "") err = err + "&";
-        err = err + "errEmail='@' and '.' should not be side by side";
+        err = err + "errEmail4='@' and '.' should not be side by side";
         validate = false;
-    }*/
+    }
     
     // validasi password
     if(password.isEmpty()){
         if(err != "") err = err + "&";
-        err = err + "errPass=password must be filled";
+        err = err + "errPass1=password must be filled";
         validate = false;
     }
     if(password.length() < 6){
         if(err != "") err = err + "&";
-        err = err + "errPass=password should be at least 6 characters";
+        err = err + "errPass2=password should be at least 6 characters";
         validate = false;
     }
-    if(!password.matches(".*[^a-z].*")){
+    if(!password.matches(".*[0-9]+.*")){
         if(err != "") err = err + "&";
-        err = err + "errPass=password must contain at least one number";
+        err = err + "errPass3=password must contain at least one number";
         validate = false;
     }
-    if(!password.matches(".*[^a-z].*")){
+    if(!password.matches(".*[a-zA-Z]+.*")){
         if(err != "") err = err + "&";
-        err = err + "errPass=password must contain at least one alphabet";
+        err = err + "errPass4=password must contain at least one alphabet";
         validate = false;
     }
 

@@ -10,25 +10,27 @@
 
     // validasi email
     if(email.isEmpty()){
-        err = err + "errEmail=email must be filled";
+        if(err != "") err = err + "&";
+        err = err + "errEmail1=email must be filled";
         validate = false;
     }
     if(!email.contains("@") || !email.contains(".")){
         if(err != "") err = err + "&";
-        err = err + "errEmail=email should contain '@' and '.'";
-        validate = false;
-    }/* ini belom
-    let position = email.search("@");
-    if(email.includes("@", (position+1))){
-        if(err != "") err = err + "&";
-        err = err + "errEmail=email contain only one '@'";
+        err = err + "errEmail2=email should contain '@' and '.'";
         validate = false;
     }
-    if(email.charAt(position+1) == '.' || email.charAt(position-1) == '.'){
-        if(err != "") err = err + "&";
-        err = err + "errEmail='@' and '.' should not be side by side";
+    String temp = "a"+email+"a"; // biar cuma @@ pun bs kesplit
+    if(temp.split("@").length > 2){
+         if(err != "") err = err + "&";
+        err = err + "errEmail3=email contain only one '@'";
         validate = false;
-    }*/
+    }
+    if(email.contains("..")){
+        if(err != "") err = err + "&";
+        err = err + "errEmail4='@' and '.' should not be side by side";
+        validate = false;
+    }
+    
     
     // validasi password
     if(password.isEmpty()){

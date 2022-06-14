@@ -16,16 +16,18 @@
         err = err + "errQty1=quantity must be filled";
         validate = false;
     }
+    else{
+        while(result.next()){
+            Integer stock = result.getInt("food_quantity");
 
-    while(result.next()){
-        Integer stock = result.getInt("food_quantity");
-
-        if(Integer.parseInt(quantity) > stock){
-            if(err != "") err = err + "&";
-            err = err + "errQty2=remaining stock = " + stock;
-            validate = false;
+            if(Integer.parseInt(quantity) > stock){
+                if(err != "") err = err + "&";
+                err = err + "errQty2=remaining stock = " + stock;
+                validate = false;
+            }
         }
     }
+    
 
     if(validate){
         String query;

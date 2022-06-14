@@ -17,15 +17,22 @@
                 <form action="controller/insert_user_controller.jsp" method="post">
                     <p>Name :</p>
                     <input type="text" name="name" placeholder="Name">
-                    <p style="color: red; margin: 0;"><% if(request.getParameter("errName") != null) out.println(request.getParameter("errName")); %> </p>
-        
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errName1") != null) out.println(request.getParameter("errName1")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errName2") != null) out.println(request.getParameter("errName2")); %> </p>
+
                     <p>Email :</p>
                     <input type="text" name="email" placeholder="Email">
-                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail") != null) out.println(request.getParameter("errEmail")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail1") != null) out.println(request.getParameter("errEmail1")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail2") != null) out.println(request.getParameter("errEmail2")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail3") != null) out.println(request.getParameter("errEmail3")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail4") != null) out.println(request.getParameter("errEmail4")); %> </p>
         
                     <p>Password :</p>
                     <input type="password" name="password" placeholder="Password">
-                    <p style="color: red; margin: 0;"><% if(request.getParameter("errPass") != null) out.println(request.getParameter("errPass")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errPass1") != null) out.println(request.getParameter("errPass1")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errPass2") != null) out.println(request.getParameter("errPass2")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errPass3") != null) out.println(request.getParameter("errPass3")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errPass4") != null) out.println(request.getParameter("errPass4")); %> </p>
                     
                     <p>Confirm Password :</p>
                     <input type="password" name="confirm password" placeholder="Confirm Password">

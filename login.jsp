@@ -17,7 +17,10 @@
                 <form action="controller/login_controller.jsp" method="post">
                     <p>Email :</p>
                     <input type="text" name="email" placeholder="Email">
-                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail") != null) out.println(request.getParameter("errEmail")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail1") != null) out.println(request.getParameter("errEmail1")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail2") != null) out.println(request.getParameter("errEmail2")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail3") != null) out.println(request.getParameter("errEmail3")); %> </p>
+                    <p style="color: red; margin: 0;"><% if(request.getParameter("errEmail4") != null) out.println(request.getParameter("errEmail4")); %> </p>
         
                     <p>Password :</p>
                     <input type="password" name="password" placeholder="Password">

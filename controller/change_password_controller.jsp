@@ -28,13 +28,13 @@
         validate = false;
     }
 
-    if(!newPassword.matches(".*[^a-z].*")){
+    if(!newPassword.matches(".*[0-9]+.*")){
         if(err != "") err = err + "&";
         err = err + "errNew3=New password must contain at least 1 number";
         validate = false;
     } 
 
-    if(!newPassword.matches(".*[^0-9].*")){
+    if(!newPassword.matches(".*[a-zA-Z]+.*")){
         if(err != "") err = err + "&";
         err = err + "errNew4=New password must contain at least 1 alphabet";
         validate = false;
