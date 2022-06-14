@@ -38,8 +38,3 @@ input, select{
     padding: 4px;
 }
 
-.errMsg{
-    display: none;
-    margin: 4px 0 0 0;
-    color: red;
-}

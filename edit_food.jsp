@@ -17,7 +17,7 @@
             <p class="title">Edit Food</p>
         </center>
   
-        <form class="add_form" action="controller/edit_food_controller.jsp" method="post" name="formFoodInput" onsubmit="return(validateFood())">
+        <form class="add_form" action="controller/edit_food_controller.jsp" method="post">
             <table>
                 <tr>
                     <td>
@@ -26,8 +26,7 @@
                     <td>
                         <input type="hidden" name="id" value="<%= request.getParameter("food_id")%>" >
                         <input class="name" type="text" name="food_name" placeholder="Name" >
-                        <p class="errMsg" id="errName1">name must be filled</p>
-                        <p class="errMsg" id="errName2">name should be at least 3 characters</p>
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errName") != null) out.println(request.getParameter("errName")); %> </p> 
                     </td>
                 </tr>
 
@@ -42,7 +41,7 @@
                             <option value="Snack">Snack</option>
                         </select>
 
-                        <p class="errMsg" id="errCategory1">category must be chosen</p>
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errCategory") != null) out.println(request.getParameter("errCategory")); %> </p> 
                     </td>
                 </tr>
 
@@ -52,8 +51,7 @@
                     </td>
                     <td>
                         <textarea name="food_description" id="" cols="30" rows="10"></textarea>
-                        <p class="errMsg" id="errDesc1">description must be filled</p>
-                        <p class="errMsg" id="errDesc2">description should be at least 5 words</p>
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errDesc") != null) out.println(request.getParameter("errDesc")); %> </p>
                     </td>
                 </tr>
 
@@ -63,7 +61,7 @@
                     </td>
                     <td>
                         <input class="img" type="text" name="food_img" id="" placeholder="Image path" >
-                        <p class="errMsg" id="errImage1">image must be filled</p>
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errImage") != null) out.println(request.getParameter("errImage")); %> </p>
                     </td>
                 </tr>
 
@@ -73,8 +71,7 @@
                     </td>
                     <td>
                         <input class="price" type="number" name="food_price" id="" placeholder="Price">
-                        <p class="errMsg" id="errPrice1">price must be filled</p>
-                        <p class="errMsg" id="errPrice2">price should be more than 0 </p>
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errPrice") != null) out.println(request.getParameter("errPrice")); %> </p> 
                     </td>
                 </tr>
 
@@ -84,8 +81,7 @@
                     </td>
                     <td>
                         <input class="qty" type="number" name="food_qty" id="" placeholder="Quantity">
-                        <p class="errMsg" id="errQty1">quantity must be filled</p>
-                        <p class="errMsg" id="errQty2">quantity should be more than or equal 0 </p>
+                        <p style="color: red; margin: 0;"><% if(request.getParameter("errQty") != null) out.println(request.getParameter("errQty")); %> </p>
                     </td>
                 </tr>
 
@@ -101,8 +97,5 @@
     </section>
 
     <jsp:include page="footer.jsp"/>
-    
-    <script src="js/validate_food.js"></script>
-    
 </body>
 </html>
