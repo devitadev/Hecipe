@@ -13,7 +13,7 @@
     ResultSet result = st.executeQuery(query1);
     
     if(quantity.isEmpty()){
-        err = err + "errQty1=quantity must be filled";
+        err = err + "errQty1-"+foodId+"=quantity must be filled";
         validate = false;
     }
     else{
@@ -22,7 +22,7 @@
 
             if(Integer.parseInt(quantity) > stock){
                 if(err != "") err = err + "&";
-                err = err + "errQty2=remaining stock = " + stock;
+                err = err + "errQty2-"+foodId+"=remaining stock = " + stock;
                 validate = false;
             }
         }

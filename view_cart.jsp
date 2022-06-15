@@ -51,8 +51,8 @@
                                     <input class="input-qty" name="quantity" type="number" value="<%= result.getString("quantity") %>">
                                     <button class="btn-save">Save</button>
                                 </form>
-                                <p style="color: red; margin: 0;"><% if(request.getParameter("errQty1") != null) out.println(request.getParameter("errQty1")); %> </p> 
-                                <p style="color: red; margin: 0;"><% if(request.getParameter("errQty2") != null) out.println(request.getParameter("errQty2")); %> </p> 
+                                <p style="color: red; margin: 0;"><% if(request.getParameter("errQty1-"+result.getString("food_id")) != null) out.println(request.getParameter("errQty1-"+result.getString("food_id"))); %> </p> 
+                                <p style="color: red; margin: 0;"><% if(request.getParameter("errQty2-"+result.getString("food_id")) != null) out.println(request.getParameter("errQty2-"+result.getString("food_id"))); %> </p> 
 
                             </td>
                             <td><p><%= result.getString("food_price") %></p></td>
