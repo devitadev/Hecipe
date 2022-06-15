@@ -83,7 +83,7 @@
 
 
     if(validate){
-        String query = String.format("UPDATE MsFood SET food_name = ('%s'), food_description = ('%s'), food_category = ('%s'), food_price = ('%d'), food_quantity = ('%d'), food_image = ('%s') WHERE food_id = ('%s')", name, description, category, price, quantity, image, id);
+        String query = String.format("UPDATE MsFood SET food_name = ('%s'), food_description = ('%s'), food_category = ('%s'), food_price = ('%s'), food_quantity = ('%s'), food_image = ('%s') WHERE food_id = ('%s')", name, description, category, price, quantity, image, id);
         st.executeUpdate(query);
 
         response.sendRedirect("../food_list.jsp");
