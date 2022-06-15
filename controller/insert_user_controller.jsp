@@ -38,7 +38,7 @@
         err = err + "errEmail3=email contain only one '@'";
         validate = false;
     }
-    if(email.contains("..")){
+    if(email.contains("@.") || email.contains(".@")){
         if(err != "") err = err + "&";
         err = err + "errEmail4='@' and '.' should not be side by side";
         validate = false;

@@ -6,8 +6,8 @@
     String category = request.getParameter("food_category");
     String description = request.getParameter("food_description");
     String image = request.getParameter("food_img");
-    int price = Integer.parseInt(request.getParameter("food_price"));
-    int quantity = Integer.parseInt(request.getParameter("food_qty"));
+    String price = request.getParameter("food_price");
+    String quantity = request.getParameter("food_qty");
 
     boolean validate = true;
     String err = "";
@@ -46,24 +46,24 @@
     } 
 
     // validasi price 
-    if(request.getParameter("food_price").isEmpty()){
+    if(price.isEmpty()){
+        if(err != "") err = err + "&";
         err = err + "errPrice1=price must be filled";
         validate = false;
     } 
-
-    if(price< 0){
+    else if(Integer.parseInt(price) < 0){
         if(err != "") err = err + "&";
         err = err + "errPrice2=price should be more than 0";
         validate = false;
     } 
     
     // validasi quantity
-    if(request.getParameter("food_qty").isEmpty()){
+    if(quantity.isEmpty()){
+        if(err != "") err = err + "&";
         err = err + "errQty1=quantity must be filled";
         validate = false;
     }
-
-    if(quantity <= 0){
+    else if(Integer.parseInt(quantity) <= 0){
         if(err != "") err = err + "&";
         err = err + "errQty2=quantity should be more than or equal 0";
         validate = false;
@@ -72,9 +72,15 @@
     // validasi image
     if(image.isEmpty()){
         if(err != "") err = err + "&";
-        err = err + "errImage=image must be filled";
+        err = err + "errImage1=image must be filled";
         validate = false;
     }
+    if(!image.endsWith(".png") && !image.endsWith(".jpg") && !image.endsWith(".jpeg")){
+        if(err != "") err = err + "&";
+        err = err + "errImage2=image extension must be .png, .jpg, or .jpeg";
+        validate = false;
+    }
+
 
     if(validate){
         String query = String.format("UPDATE MsFood SET food_name = ('%s'), food_description = ('%s'), food_category = ('%s'), food_price = ('%d'), food_quantity = ('%d'), food_image = ('%s') WHERE food_id = ('%s')", name, description, category, price, quantity, image, id);
